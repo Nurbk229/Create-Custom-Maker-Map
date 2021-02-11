@@ -55,7 +55,21 @@ ic_marker.png<br />
 ![ic_marker](https://user-images.githubusercontent.com/41232970/107628840-e5efdc80-6c69-11eb-82c8-dc92b03ed0cb.png)
 
 <br /> <br /> <br />
-Activity or Fragment  .Java or .kt
+# 3-Activity or Fragment  .Java or .kt
+
+public class SelectDeliveryFragment extends Fragment{
+    private ImageView mMarkerImageView;
+    private View mCustomMarkerView;
+    
+     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mCustomMarkerView = ((LayoutInflater) requireActivity().getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.view_custom_marker, null);
+        mMarkerImageView = (ImageView) mCustomMarkerView.findViewById(R.id.profile_image);
+     
+   }
+}
 
 
 
