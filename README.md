@@ -7,6 +7,10 @@ How to create a custom-shaped bitmap marker with Android map API
  ```groovy
 dependencies {
   implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
+   
+   //glide
+   implementation 'com.github.bumptech.glide:glide:4.11.0'
+   annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
   }
  ```
  <br /><br /><br />
@@ -56,21 +60,49 @@ ic_marker.png<br />
 
 <br /> <br /> <br />
 # 3-Activity or Fragment  .Java or .kt
+ ```groovy
+   public class SelectDeliveryFragment extends Fragment{
+       private ImageView mMarkerImageView;
+       private View mCustomMarkerView;
 
-public class SelectDeliveryFragment extends Fragment{
-    private ImageView mMarkerImageView;
-    private View mCustomMarkerView;
+        @Override
+      public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+           super.onViewCreated(view, savedInstanceState);
+           mCustomMarkerView = ((LayoutInflater) requireActivity().getSystemService(
+                   Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.view_custom_marker, null);
+           mMarkerImageView = (ImageView) mCustomMarkerView.findViewById(R.id.profile_image);
+      }
+      
+       private void addMarkersUser(double lat, double lng, String image) {
+          endLatLng = new LatLng(lat, lng);
+          usersMarker = mMap.addMarker(new MarkerOptions()
+                  .position(endLatLng)
+                  .title(notification.getUsers().getNameRes() + " is Here"));
+          provideImage(usersMarker, image);
+
+          mMap.moveCamera(CameraUpdateFactory.newLatLng(endLatLng));
+          mMap.setOnMarkerClickListener(this);
+    }
     
-     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mCustomMarkerView = ((LayoutInflater) requireActivity().getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.view_custom_marker, null);
-        mMarkerImageView = (ImageView) mCustomMarkerView.findViewById(R.id.profile_image);
-     
-   }
-}
+       private void provideImage(Marker marker, String image) {
+           Glide.with(requireContext())
+                   .asBitmap()
+                   .load(image)
+                   .fitCenter()
+                   .into(new CustomTarget<Bitmap>() {
+                       @Override
+                       public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                           marker.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(mCustomMarkerView, resource)));
+                       }
 
+                       @Override
+                       public void onLoadCleared(@Nullable Drawable placeholder) {
+
+                       }
+                   });
+       }
+   }
+```
 
 
 
