@@ -1,6 +1,6 @@
 # Create-Custom-Maker-Map
 How to create a custom-shaped bitmap marker with Android map API 
-
+This is sample project to create a custom marker with images(from URL) on android using google map API.
 ![Screenshot 2021-02-11 130102](https://user-images.githubusercontent.com/41232970/107628398-3dda1380-6c69-11eb-9b70-de03637a2552.png)
 <br />
 
