@@ -13,9 +13,9 @@ How to create a custom-shaped bitmap marker with Android map API
 
      }
   ```
- <br />
- # 1-Layout
- view_custom_marker.xml
+<br />
+# 1-Layout
+view_custom_marker.xml
   ```groovy 
     <?xml version="1.0" encoding="utf-8"?>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
