@@ -10,6 +10,7 @@ dependencies {
   }
  ```
  <br /><br /><br />
+ # 1-Layout
  view_custom_marker.xml
  ```groovy 
   <?xml version="1.0" encoding="utf-8"?>
@@ -49,6 +50,8 @@ dependencies {
   </FrameLayout>
 ```
 <br /> <br /> <br />
+# 2-drawable
+ic_marker.png
 ![ic_marker](https://user-images.githubusercontent.com/41232970/107628840-e5efdc80-6c69-11eb-82c8-dc92b03ed0cb.png)
 
 
