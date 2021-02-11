@@ -5,12 +5,13 @@ How to create a custom-shaped bitmap marker with Android map API
 
 <br />
  ```groovy
-dependencies {
-  implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
-   
-  implementation 'com.github.bumptech.glide:glide:4.11.0'
-  annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-  }
+ dependencies {
+
+   implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
+   implementation 'com.github.bumptech.glide:glide:4.11.0'
+   annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+   }
  ```
  <br />
  # 1-Layout
