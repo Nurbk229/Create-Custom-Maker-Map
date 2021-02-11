@@ -9,5 +9,5 @@ dependencies {
   implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
   }
  ```
- 
+ <br /><br /><br />
  view_custom_marker.xml
