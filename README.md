@@ -3,7 +3,7 @@ How to create a custom-shaped bitmap marker with Android map API
 
 ![Screenshot 2021-02-11 130102](https://user-images.githubusercontent.com/41232970/107628398-3dda1380-6c69-11eb-9b70-de03637a2552.png)
 
-
+<br />
  ```groovy
 dependencies {
   implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
@@ -13,7 +13,7 @@ dependencies {
    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
   }
  ```
- <br /><br /><br />
+ <br />
  # 1-Layout
  view_custom_marker.xml
  ```groovy 
@@ -101,6 +101,24 @@ ic_marker.png<br />
                        }
                    });
        }
+       
+       
+        private Bitmap getMarkerBitmapFromView(View view, Bitmap bitmap) {
+            mMarkerImageView.setImageBitmap(bitmap);
+            view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+            view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+            view.buildDrawingCache();
+            Bitmap returnedBitmap = Bitmap.createBitmap(view.getMeasuredWidth(), view.getMeasuredHeight(),
+                    Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(returnedBitmap);
+            canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN);
+            Drawable drawable = view.getBackground();
+            if (drawable != null)
+                drawable.draw(canvas);
+            view.draw(canvas);
+            return returnedBitmap;
+    }
+    
    }
 ```
 
