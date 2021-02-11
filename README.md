@@ -8,9 +8,8 @@ How to create a custom-shaped bitmap marker with Android map API
 dependencies {
   implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
    
-   //glide
-   implementation 'com.github.bumptech.glide:glide:4.11.0'
-   annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+  implementation 'com.github.bumptech.glide:glide:4.11.0'
+  annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
   }
  ```
  <br />
