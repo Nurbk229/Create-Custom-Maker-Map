@@ -4,7 +4,7 @@ How to create a custom-shaped bitmap marker with Android map API
 ![Screenshot 2021-02-11 130102](https://user-images.githubusercontent.com/41232970/107628398-3dda1380-6c69-11eb-9b70-de03637a2552.png)
 <br />
 
-```groovy
+ ```groovy
    dependencies {
 
      implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
@@ -12,11 +12,13 @@ How to create a custom-shaped bitmap marker with Android map API
      annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
      }
-```
+ ```
+ 
 <br />
 # 1-Layout
 view_custom_marker.xml
-```groovy 
+
+ ```groovy 
     <?xml version="1.0" encoding="utf-8"?>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -52,7 +54,8 @@ view_custom_marker.xml
             android:padding="4dp" />
 
     </FrameLayout>
-```
+ ```
+
 <br />
 
 # 2-drawable
