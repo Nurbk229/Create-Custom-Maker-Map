@@ -4,16 +4,16 @@ This is sample project to create a custom marker with images(from URL) on androi
 ![Screenshot 2021-02-11 130102](https://user-images.githubusercontent.com/41232970/107628398-3dda1380-6c69-11eb-9b70-de03637a2552.png)
 <br />
 
+
  ```groovy
    dependencies {
-
      implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
      implementation 'com.github.bumptech.glide:glide:4.11.0'
      annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
      }
  ```
- 
+
+
 <br />
 # 1-Layout
 view_custom_marker.xml
