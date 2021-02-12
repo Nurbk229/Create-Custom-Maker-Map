@@ -133,5 +133,3 @@ ic_marker.png
    }
 ```
 
-
-
