@@ -15,6 +15,7 @@ This is sample project to create a custom marker with images(from URL) on androi
  ```
 
 <br />
+
 # 1-Layout
 
 view_custom_marker.xml
